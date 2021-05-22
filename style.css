@@ -80,6 +80,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border: 3px solid transparent;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -108,6 +109,22 @@
 
 .form input.warning {
   border-color: #ff7a7a;
+  color: #ff7a7a;
+}
+
+.form input.warning::-webkit-input-placeholder {
+  color: #ff7a7a;
+}
+
+.form input.warning:-ms-input-placeholder {
+  color: #ff7a7a;
+}
+
+.form input.warning::-ms-input-placeholder {
+  color: #ff7a7a;
+}
+
+.form input.warning::placeholder {
   color: #ff7a7a;
 }
 

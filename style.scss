@@ -75,6 +75,7 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
   background-color: #fff;
   border-radius: 10px;
   display: flex;
+  border: 3px solid transparent;
   flex-direction: column;
   padding: 1.5rem;
   box-shadow: 0 8px rgba($neutralDarkBlue, 0.25);
@@ -95,6 +96,9 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
     &.warning {
       border-color: $primaryRed;
       color: $primaryRed;
+      &::placeholder {
+        color: $primaryRed;
+      }
       & + p {
         visibility: visible;
         &::after {
