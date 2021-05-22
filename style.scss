@@ -102,3 +102,41 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
     }
   }
 }
+
+@media screen and (min-width: 50.625em) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    background-image: url("./images/bg-intro-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .content {
+    width: 100%;
+    padding: 8rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0;
+    .text-wrapper {
+      text-align: left;
+      padding-right: 3.8rem;
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .heading {
+        font-size: 3rem;
+        margin-top: 8rem;
+        width: 100%;
+      }
+    }
+  }
+  .btn {
+    margin-top: 0.5rem;
+  }
+  .form {
+    padding: 2.5rem;
+  }
+}
