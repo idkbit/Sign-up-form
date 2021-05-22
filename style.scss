@@ -35,10 +35,12 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
     .heading {
       font-size: 1.7rem;
       margin-bottom: 1.3rem;
+      animation: fromLeft 0.4s forwards;
     }
     .text {
       font-size: 1rem;
       line-height: 1.7;
+      animation: fromLeft 0.7s forwards;
     }
   }
 }
@@ -50,10 +52,20 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
   padding: 1rem 3rem;
   border-radius: 10px;
   text-decoration: none;
+  border: 2px solid transparent;
   text-align: center;
   box-shadow: 0 7px rgba($neutralDarkBlue, 0.3);
   margin-bottom: 2rem;
   font-weight: 400;
+  transition: background-color 0.3s;
+  &:focus {
+    outline: 1px solid transparent;
+    border: 2px solid #fff;
+    background-color: lighten($color: $accentBlue, $amount: 5%);
+  }
+  &:hover {
+    background-color: lighten($color: $accentBlue, $amount: 5%);
+  }
   .free {
     font-weight: 600;
   }
@@ -66,13 +78,56 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
   flex-direction: column;
   padding: 1.5rem;
   box-shadow: 0 8px rgba($neutralDarkBlue, 0.25);
+  position: relative;
   input {
     padding: 1.2rem 1rem;
     border-radius: 5px;
-    border: 1px solid rgba($neutralDarkBlue, 0.3);
-    margin-bottom: 1rem;
+    border: 2px solid rgba($neutralDarkBlue, 0.1);
     color: $neutralDarkBlue;
     font-weight: 700;
+    position: relative;
+    margin-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+    &:focus {
+      outline: 2px solid transparent;
+      border-color: rgba($accentBlue, 0.5);
+    }
+    &.warning {
+      border-color: $primaryRed;
+      color: $primaryRed;
+      & + p {
+        visibility: visible;
+        &::after {
+          content: "";
+          position: absolute;
+          right: 3rem;
+          width: 24px;
+          height: 24px;
+          background-image: url("./images/icon-error.svg");
+        }
+        &.firstName::after {
+          top: 2.5rem;
+        }
+        &.lastName::after {
+          top: 8.9rem;
+        }
+        &.email::after {
+          top: 15.2rem;
+        }
+        &.password::after {
+          top: 21.5rem;
+        }
+      }
+    }
+    & + p {
+      visibility: hidden;
+      font-style: italic;
+      font-weight: 500;
+      color: $primaryRed;
+      text-align: right;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+    }
     &::placeholder {
       color: rgba($neutralDarkBlue, 0.8);
       font-weight: 600;
@@ -84,21 +139,51 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
     text-align: center;
     text-transform: uppercase;
     font-weight: 600;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     letter-spacing: 1px;
     border-radius: 5px;
     padding: 1rem;
     box-shadow: 0 4px darken($color: $primaryGreen, $amount: 7%);
     margin-bottom: 1rem;
+    transition: 0.3s;
+    &:focus {
+      outline: 1px solid transparent;
+      background-color: lighten($color: $primaryGreen, $amount: 10%);
+      border-color: darken($color: $primaryGreen, $amount: 7%);
+    }
+    &:hover {
+      background-color: lighten($color: $primaryGreen, $amount: 10%);
+      cursor: pointer;
+    }
   }
   .small-text {
     font-size: 0.7rem;
     text-align: center;
     color: $neutralGrayishBlue;
     line-height: 2;
-    .span {
+    .terms {
       color: $primaryRed;
       font-weight: 600;
+      text-decoration: none;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        padding: 1px;
+        bottom: -3px;
+        left: 26%;
+        transition: width 0.3s;
+      }
+      &:focus,
+      &:hover {
+        outline: 1px solid transparent;
+        position: relative;
+        &::after {
+          width: 50%;
+          background-color: $primaryRed;
+          transform: scaleX(2);
+        }
+      }
     }
   }
 }
@@ -138,5 +223,35 @@ $neutralGrayishBlue: hsl(246, 25%, 77%);
   }
   .form {
     padding: 2.5rem;
+    input {
+      &.warning {
+        & + p {
+          &::after {
+            right: 4rem;
+          }
+          &.firstName::after {
+            top: 3.5rem;
+          }
+          &.lastName::after {
+            top: 9.7rem;
+          }
+          &.email::after {
+            top: 16.2rem;
+          }
+          &.password::after {
+            top: 22.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fromLeft {
+  from {
+    transform: translateX(-145%);
+  }
+  to {
+    transform: translateX(0%);
   }
 }

@@ -23,13 +23,17 @@
       <div class="form-wrapper">
         <a href="#" class="btn"><span class="free">Try it free 7 days</span> then $20/mo. thereafter</a>
         <form class="form">
-          <input type="text" name="firstName" id="firstName" placeholder="First Name">
-          <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+          <input type="text" name="firstName" id="firstName" placeholder="First Name" minlength="2" maxlength="16">
+          <p class="firstName">First Name cannot be empty</p>
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name" minlength="2" maxlength="16">
+          <p class="lastName">Last Name cannot be empty</p>
           <input type="email" name="email" id="email" placeholder="Email Address">
+          <p class="email">Looks like this is not an email</p>
           <input type="password" name="pass" id="pass" placeholder="Password">
+          <p class="password">Password cannot be empty</p>
           <button type="submit" class="submit">Claim your free trial</button>
-          <p class="small-text">By clicking the button, you are agreeing to our <span class="span">Terms and
-              Services</span></p>
+          <p class="small-text">By clicking the button, you are agreeing to our <a href="#" class="terms">Terms and
+              Services</a></p>
         </form>
       </div>
     </section>

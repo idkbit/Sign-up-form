@@ -32,11 +32,15 @@
 .content .text-wrapper .heading {
   font-size: 1.7rem;
   margin-bottom: 1.3rem;
+  -webkit-animation: fromLeft 0.4s forwards;
+          animation: fromLeft 0.4s forwards;
 }
 
 .content .text-wrapper .text {
   font-size: 1rem;
   line-height: 1.7;
+  -webkit-animation: fromLeft 0.7s forwards;
+          animation: fromLeft 0.7s forwards;
 }
 
 .btn {
@@ -46,11 +50,24 @@
   padding: 1rem 3rem;
   border-radius: 10px;
   text-decoration: none;
+  border: 2px solid transparent;
   text-align: center;
   -webkit-box-shadow: 0 7px rgba(62, 60, 73, 0.3);
           box-shadow: 0 7px rgba(62, 60, 73, 0.3);
   margin-bottom: 2rem;
   font-weight: 400;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.btn:focus {
+  outline: 1px solid transparent;
+  border: 2px solid #fff;
+  background-color: #6e64af;
+}
+
+.btn:hover {
+  background-color: #6e64af;
 }
 
 .btn .free {
@@ -70,15 +87,67 @@
   padding: 1.5rem;
   -webkit-box-shadow: 0 8px rgba(62, 60, 73, 0.25);
           box-shadow: 0 8px rgba(62, 60, 73, 0.25);
+  position: relative;
 }
 
 .form input {
   padding: 1.2rem 1rem;
   border-radius: 5px;
-  border: 1px solid rgba(62, 60, 73, 0.3);
-  margin-bottom: 1rem;
+  border: 2px solid rgba(62, 60, 73, 0.1);
   color: #3e3c49;
   font-weight: 700;
+  position: relative;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.form input:focus {
+  outline: 2px solid transparent;
+  border-color: rgba(96, 85, 165, 0.5);
+}
+
+.form input.warning {
+  border-color: #ff7a7a;
+  color: #ff7a7a;
+}
+
+.form input.warning + p {
+  visibility: visible;
+}
+
+.form input.warning + p::after {
+  content: "";
+  position: absolute;
+  right: 3rem;
+  width: 24px;
+  height: 24px;
+  background-image: url("./images/icon-error.svg");
+}
+
+.form input.warning + p.firstName::after {
+  top: 2.5rem;
+}
+
+.form input.warning + p.lastName::after {
+  top: 8.9rem;
+}
+
+.form input.warning + p.email::after {
+  top: 15.2rem;
+}
+
+.form input.warning + p.password::after {
+  top: 21.5rem;
+}
+
+.form input + p {
+  visibility: hidden;
+  font-style: italic;
+  font-weight: 500;
+  color: #ff7a7a;
+  text-align: right;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 .form input::-webkit-input-placeholder {
@@ -107,13 +176,26 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   letter-spacing: 1px;
   border-radius: 5px;
   padding: 1rem;
   -webkit-box-shadow: 0 4px #2eb279;
           box-shadow: 0 4px #2eb279;
   margin-bottom: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.form .submit:focus {
+  outline: 1px solid transparent;
+  background-color: #61d6a3;
+  border-color: #2eb279;
+}
+
+.form .submit:hover {
+  background-color: #61d6a3;
+  cursor: pointer;
 }
 
 .form .small-text {
@@ -123,9 +205,33 @@
   line-height: 2;
 }
 
-.form .small-text .span {
+.form .small-text .terms {
   color: #ff7a7a;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.form .small-text .terms::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  padding: 1px;
+  bottom: -3px;
+  left: 26%;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+
+.form .small-text .terms:focus, .form .small-text .terms:hover {
+  outline: 1px solid transparent;
+  position: relative;
+}
+
+.form .small-text .terms:focus::after, .form .small-text .terms:hover::after {
+  width: 50%;
+  background-color: #ff7a7a;
+  -webkit-transform: scaleX(2);
+          transform: scaleX(2);
 }
 
 @media screen and (min-width: 50.625em) {
@@ -182,6 +288,43 @@
   }
   .form {
     padding: 2.5rem;
+  }
+  .form input.warning + p::after {
+    right: 4rem;
+  }
+  .form input.warning + p.firstName::after {
+    top: 3.5rem;
+  }
+  .form input.warning + p.lastName::after {
+    top: 9.7rem;
+  }
+  .form input.warning + p.email::after {
+    top: 16.2rem;
+  }
+  .form input.warning + p.password::after {
+    top: 22.5rem;
+  }
+}
+
+@-webkit-keyframes fromLeft {
+  from {
+    -webkit-transform: translateX(-145%);
+            transform: translateX(-145%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes fromLeft {
+  from {
+    -webkit-transform: translateX(-145%);
+            transform: translateX(-145%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 /*# sourceMappingURL=style.css.map */
