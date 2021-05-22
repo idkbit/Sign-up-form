@@ -1,0 +1,104 @@
+$primaryRed: hsl(0, 100%, 74%);
+$primaryGreen: hsl(154, 59%, 51%);
+
+$accentBlue: hsl(248, 32%, 49%);
+
+$neutralDarkBlue: hsl(249, 10%, 26%);
+$neutralGrayishBlue: hsl(246, 25%, 77%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background-image: url("./images/bg-intro-mobile.png");
+  background-color: $primaryRed;
+}
+
+.content {
+  width: 85%;
+  padding: 5.5rem 0;
+  margin: 0 auto;
+  .text-wrapper {
+    color: #fff;
+    margin-bottom: 3rem;
+    text-align: center;
+    .heading {
+      font-size: 1.7rem;
+      margin-bottom: 1.3rem;
+    }
+    .text {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  background-color: $accentBlue;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 7px rgba($neutralDarkBlue, 0.3);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  .free {
+    font-weight: 600;
+  }
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  box-shadow: 0 8px rgba($neutralDarkBlue, 0.25);
+  input {
+    padding: 1.2rem 1rem;
+    border-radius: 5px;
+    border: 1px solid rgba($neutralDarkBlue, 0.3);
+    margin-bottom: 1rem;
+    color: $neutralDarkBlue;
+    font-weight: 700;
+    &::placeholder {
+      color: rgba($neutralDarkBlue, 0.8);
+      font-weight: 600;
+    }
+  }
+  .submit {
+    background-color: $primaryGreen;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid transparent;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 4px darken($color: $primaryGreen, $amount: 7%);
+    margin-bottom: 1rem;
+  }
+  .small-text {
+    font-size: 0.7rem;
+    text-align: center;
+    color: $neutralGrayishBlue;
+    line-height: 2;
+    .span {
+      color: $primaryRed;
+      font-weight: 600;
+    }
+  }
+}

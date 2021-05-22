@@ -1,1 +1,130 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background-image: url("./images/bg-intro-mobile.png");
+  background-color: #ff7a7a;
+}
+
+.content {
+  width: 85%;
+  padding: 5.5rem 0;
+  margin: 0 auto;
+}
+
+.content .text-wrapper {
+  color: #fff;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.content .text-wrapper .heading {
+  font-size: 1.7rem;
+  margin-bottom: 1.3rem;
+}
+
+.content .text-wrapper .text {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.btn {
+  display: block;
+  background-color: #6055a5;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  -webkit-box-shadow: 0 7px rgba(62, 60, 73, 0.3);
+          box-shadow: 0 7px rgba(62, 60, 73, 0.3);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.btn .free {
+  font-weight: 600;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.5rem;
+  -webkit-box-shadow: 0 8px rgba(62, 60, 73, 0.25);
+          box-shadow: 0 8px rgba(62, 60, 73, 0.25);
+}
+
+.form input {
+  padding: 1.2rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(62, 60, 73, 0.3);
+  margin-bottom: 1rem;
+  color: #3e3c49;
+  font-weight: 700;
+}
+
+.form input::-webkit-input-placeholder {
+  color: rgba(62, 60, 73, 0.8);
+  font-weight: 600;
+}
+
+.form input:-ms-input-placeholder {
+  color: rgba(62, 60, 73, 0.8);
+  font-weight: 600;
+}
+
+.form input::-ms-input-placeholder {
+  color: rgba(62, 60, 73, 0.8);
+  font-weight: 600;
+}
+
+.form input::placeholder {
+  color: rgba(62, 60, 73, 0.8);
+  font-weight: 600;
+}
+
+.form .submit {
+  background-color: #38cc8c;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid transparent;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  padding: 1rem;
+  -webkit-box-shadow: 0 4px #2eb279;
+          box-shadow: 0 4px #2eb279;
+  margin-bottom: 1rem;
+}
+
+.form .small-text {
+  font-size: 0.7rem;
+  text-align: center;
+  color: #b9b6d3;
+  line-height: 2;
+}
+
+.form .small-text .span {
+  color: #ff7a7a;
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */
